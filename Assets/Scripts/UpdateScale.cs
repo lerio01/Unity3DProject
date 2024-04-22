@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class UpdateScale : MonoBehaviour
 {
-     public float minScale;
+    [Range(0f, 10f)]
+    public float minScale;
+    [Range(0f, 10f)]
      public float maxScale;
+    [Range(0f, 10f)]
      public float scaleSpeed;
      private bool isScalingUp = true;
     void Start()
@@ -14,18 +17,12 @@ public class UpdateScale : MonoBehaviour
     }
 
     
-    void Update()
+    void Update() 
     {
         float scaleFactor = isScalingUp ? 1.0f : -1.0f;
         transform.localScale += Vector3.one * scaleFactor * scaleSpeed * Time.deltaTime;
         
-        if (transform.localScale.x < minScale)
-        {
-            isScalingUp = true;
-        }
-        else if (transform.localScale.x > maxScale)
-        {
-            isScalingUp = false;
-        }
+        isScalingUp = transform.localScale.x < minScale ? true : (transform.localScale.x > maxScale ? false : isScalingUp);
+
     }
 }
