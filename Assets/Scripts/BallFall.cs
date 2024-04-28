@@ -7,7 +7,6 @@ public class BallFall : MonoBehaviour
     private AudioSource audioSource;
     private void Start()
     {
-        
         MusicLose m = GetComponent<MusicLose>();
 
         audioSource = GetComponent<AudioSource>();

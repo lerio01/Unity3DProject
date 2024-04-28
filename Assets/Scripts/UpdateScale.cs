@@ -22,7 +22,7 @@ public class UpdateScale : MonoBehaviour
         float scaleFactor = isScalingUp ? 1.0f : -1.0f;
         transform.localScale += Vector3.one * scaleFactor * scaleSpeed * Time.deltaTime;
         
-        isScalingUp = transform.localScale.x < minScale ? true : (transform.localScale.x > maxScale ? false : isScalingUp);
+        isScalingUp = transform.localScale.x < minScale ? true : (transform.localScale.x > maxScale ? false : isScalingUp);//Змінила на тернарний оператор
 
     }
 }

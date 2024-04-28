@@ -8,10 +8,8 @@ public class MusicVictory : MonoBehaviour
     private AudioSource audioSource;
 
     void Start()
-    {
-        
-        audioSource = GetComponent<AudioSource>();
-        
+    {       
+        audioSource = GetComponent<AudioSource>();       
     }
     void OnCollisionEnter(Collision collision)
     {
